@@ -1,0 +1,10 @@
+export(vgeo, deltas, proxi, estW, INCAindex,INCAnumclu, INCAtest, dbhatta, dgower, dmahal, dcor, dproc2)
+
+S3method(print, incaest)
+S3method(print, incaix)
+S3method(print, incanc)
+S3method(summary, incaix)
+S3method(plot, incaix)
+S3method(plot, incanc)
+S3method(print, incat)
+S3method(summary, incat)
