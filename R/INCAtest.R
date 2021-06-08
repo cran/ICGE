@@ -25,36 +25,27 @@ if (any(pert==0))
 # Calculate  W and projections U
 vg <- vgeo(d, pert);
 delta <- deltas_simple(d,vg,pert)
-phi <- proxi_simple(d_test,vg,pert)
-ama <- estW_simple(vg,delta, phi)
+frec <- tabulate(pert)
+phi <- proxi_simple(d_test,vg,pert, frec=frec)
+ama <- estW_simple(phi, vg, delta)
 W0 <-  ama$Wvalue
 U <- ama$Uvalue
 
 ###### Calculate the null distribution. It is repeated 10*P times
-frec <- tabulate(pert)  # vector of frecuencies of individuals in each population
+# vector of cumulative frecuencies of individuals in each population
+frecacum <- c(0, cumsum(frec))
 
 
-# Acumulate frecuencies
-frecacum <- matrix(0,k+1,1);
-for (pob in 2:(k+1)){
-     frecacum[pob] <- frecacum[pob-1]+frec[pob-1];
-}
-
-P <- 10*P
-percentage  <- 0
+#P <- 10*P
+pvalues <- rep(NA, P)
 for (r in 1:P){
 	TW <- distrW(d, pert, np, frec, frecacum)  
-	partial.p.value <- 0
-	for (b in 1:np){
-		if (TW[b] > W0){partial.p.value <- partial.p.value +1}
-	}
-	partial.p.value <- partial.p.value/np
-	if (partial.p.value < alpha){percentage <- percentage + 1}
+	pvalues[r] <- sum(TW > W0)/np
 }
 
-percentage  <- percentage /P*100
 
-out <- list(StatisticW0= W0, ProjectionsU=U, Percentage_under_alpha=percentage, alpha=alpha )
+#out <- list(StatisticW0= W0, ProjectionsU=U, Percentage_under_alpha=percentage, alpha=alpha )
+out <- list(StatisticW0= W0, ProjectionsU=U, pvalues=pvalues, alpha=alpha )
 class(out) <- "incat"
 return(out)
 }

@@ -1,4 +1,7 @@
-import(MASS, cluster)
+import(cluster, fastcluster)
+importFrom("MASS", "ginv")
+importFrom("graphics", "barplot", "legend", "lines")
+importFrom("stats", "as.dist", "cor", "cutree", "var")
 export(vgeo, deltas, proxi, estW, INCAindex,INCAnumclu, INCAtest, dbhatta, dgower, dmahal, dcor, dproc2)
 
 

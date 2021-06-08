@@ -19,7 +19,7 @@ dmahal(datos, S)
 
 Everitt B. S. and Dunn G. (2001) \emph{ Applied Multivariate Data Analysis}. 2 edition, Edward Arnold, London.
 }
-\author{  Itziar Irigoien \email{itziar.irigoien@ehu.es}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV-EHU), Donostia, Spain.
+\author{  Itziar Irigoien \email{itziar.irigoien@ehu.eus}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV/EHU), Donostia, Spain.
 
 Conchita Arenas \email{carenas@ub.edu}; Departament d'Estadistica, Universitat de Barcelona, Barcelona, Spain.
 }

@@ -23,6 +23,8 @@ if (length(tabulate(as.factor(pert))) != k)
 # 0 can not be a partitions name
 if (any(pert==0))
   stop("pert contains 0 named individuals.Partitions must be named by factors or with numbers from 1 to k.")
+if (length(dx0) != n)
+  stop(paste("dx0 must have", n, "elements"))
 
 
 # We need the geometrical variabilities

@@ -19,7 +19,8 @@ n <- dim(d)[1]
 
 
 
-METHODS <- c("pam","diana","fanny", "average", "single", "complete", "ward", "weighted","partition")
+METHODS <- c("pam","diana","fanny", "average", "single", "complete", "ward.D2", "ward.D",
+             "centroid", "median","partition")
 meth <- pmatch(method, METHODS)
 if (is.na(meth)) 
     stop("invalid clustering method")

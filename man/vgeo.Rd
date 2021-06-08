@@ -19,7 +19,7 @@ vgeo(d, pert = "onegroup")
 
 Cuadras, C.M. (1992). Some examples of distance based discrimination. \emph{Biometrical Letters}, \bold{29}(1), 3--20.
 }
-\author{  Itziar Irigoien \email{itziar.irigoien@ehu.es}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV-EHU), Donostia, Spain.
+\author{  Itziar Irigoien \email{itziar.irigoien@ehu.eus}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV/EHU), Donostia, Spain.
 
 Conchita Arenas \email{carenas@ub.edu}; Departament d'Estadistica, Universitat de Barcelona, Barcelona, Spain.
 }

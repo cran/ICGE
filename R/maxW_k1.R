@@ -16,20 +16,14 @@ nn <- dim(x_d)[1]
 atipico <- matrix(0,nt,1)
 
 
-# As there is an unique cluster in population
+# As there is an only cluster in population
 pert <- matrix(1,nn,1)
 vg <- vgeo(x_d, pert);
 
 
 # Calculate W for ind. in xx/d_x
+TW <- apply(x_d, 1, proxi_simple, var=vg, pert=pert, frec=nn)
 
-TW <- matrix(0,nn,1)+999;
-for (l in 1:nn){   
-   
-    phib <- proxi_simple(x_d[l,],vg,pert);
-    
-    TW[l] <- phib              #this case W is the proximity function    
-}
 
 
 # Calculate the maximum of W for ind. in xx
@@ -37,24 +31,10 @@ M <- max(TW)
 
 ############################################
 # Calculate W for ind. in v_d and evaluter whether is atypical or not
- 
-for (ind in 1:nt){
-    W0 <- proxi_simple(v_d[ind,],vg,pert)
-    # Classification    
-    if (W0<=M){
-        atipico[ind] <-0
-    }
-    if (W0 > M){
-        atipico[ind] <-1
-    } 
-} #for ind=1:nt
+W0 <- apply(v_d, 1, proxi_simple, var=vg, pert=pert, frec=nn)
+atipico <- ifelse(W0 <= M, 0, 1)
 
-
-
-contar <- 0 # To count atypicals in  v_d
-contar <- sum(atipico)
-  
-out<-contar
+out <- sum(atipico)
 
 return(out)
 

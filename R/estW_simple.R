@@ -1,38 +1,31 @@
-estW_simple<-function(var, delta, phi){
+estW_simple<-function(phi, var, delta, Uout=TRUE){
 ######################## Estimation of INCA W (faster version) ###############
 # Input:
-# var: vector of geometric variabilities
-# delta: matrix of distances between clusters
-# phi: proximity vector
+    # phi: proximity vector
+    # var: vector of geometric variabilities
+    # delta: matrix of distances between clusters
+    # Uout: logical to indicate whether U values shold be returned
 # Output:
-# Wvalue: estimation of W
-# Uvalue: projections U1, ..., Uk
+   # Wvalue: estimation of W
+   # Uvalue: projections U1, ..., Uk
 ##############################################################################
 
 k <- length(var)
-U<-matrix(0,k,1)
-M<- matrix(0,k-1,k-1)
-N<- matrix(0,k-1,1)
+U <-matrix(0, k, 1)
+M <- matrix(0, k-1, k-1)
+N <- matrix(0, k-1, 1)
 
 for (i in 1:(k-1)){
     for (j in i:(k-1)){
 
-        M[i,j]=delta[i,k]+delta[j,k]-delta[i,j]
-
+        M[i,j] <- delta[i,k]+delta[j,k]-delta[i,j]
+        M[j,i] <- M[i,j]
     }
-}
-
-for (i in 1:(k-1)){
-    for (j in i:(k-1)){
-        M[j,i]=M[i,j]
-    }
-}
-
-for (i in 1:(k-1)){
     N[i]=delta[i,k]+phi[k]-phi[i]
 }
-#library(MASS)
-alpha<-ginv(M)%*%N
+
+
+alpha <- MASS::ginv(M)%*%N
 
 aux <- sum(alpha)
 alpha <- c(alpha, 1-aux)
@@ -52,9 +45,15 @@ if ( W < 0 ){
     W <- 0
 }
 
-for (i in 1:k){
-U[i]=phi[i]-W
+U <- phi - W
+
+if(Uout)
+{
+    out=list(Wvalue=W, Uvalue=U) 
+}else
+{
+    out <- W
 }
-out=list(Wvalue=W, Uvalue=U)
+
 return(out)
 }

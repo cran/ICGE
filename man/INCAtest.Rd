@@ -15,12 +15,12 @@ INCAtest(d, pert, d_test, np = 1000, alpha = 0.05, P = 1)
   \item{d_test}{ an n-vector containing the distances from x0 to the other units.}
   \item{np}{ sample size for the bootstrap sample for the bootstrap procedure.}
   \item{alpha}{ fixed level for the test.}
-  \item{P}{ the bootstrap procedure is repeated 10*P times.}
+  \item{P}{ Number of times the bootstrap procedure is repeated.}
 }
 \value{A list with class "incat" containing the following components:
   \item{StatisticW0 }{value of the INCA statistic.}
   \item{ProjectionsU }{values of statistics measuring the projection from the specific object to each considered group.}
-  \item{Percentage_under_alpha }{percentage of times the INCA test has been rejected for specified value of \code{alpha}.}
+  \item{pvalues}{p-values obtained in the \code{P} times repeated bootstrap procedure.}
   \item{alpha }{specified value of the level of the test.}
 }
 \references{ Irigoien, I. and  Arenas, C. (2008). INCA: New statistic for estimating the number of clusters and identifying atypical units.

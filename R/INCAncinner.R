@@ -15,48 +15,39 @@ n <- dim(d)[1]
 
 
 pama <- function(d, K){
-   T <- rep(NA, K)  
-   for (k in 2:K){
-       p <- pam(d, k, diss=TRUE)$clustering
-       T[k] <- INCAindex(d, p)$Total
-   }
-    return(T)
+  ppp <- sapply(2:K, function(x){cluster::pam(d, k=x, diss=TRUE)$clustering})
+  T <- c(NA, apply(ppp, 2, function(x){INCAindex(d, x)$Total}))
+  return(T)
 }  
 
 dian <- function(d, K){
-   T <- rep(NA, K)  
-   for (k in 2:K){
-      aux <- diana(d, diss=TRUE)
-      p <- cutree(aux, k)
-      T[k] <- INCAindex(d, p)$Total
-   }
-    return(T)
+  aux <- cluster::diana(d, diss=TRUE)
+  ppp <- sapply(2:K, function(x){stats::cutree(aux, k=x)})
+  T <- c(NA, apply(ppp, 2, function(x){INCAindex(d, x)$Total}))
+  return(T)
 }  
 
 
 fannya <- function(d, K){
-    T <- rep(NA, K)  
-    for (k in 2:K){
-        p <- fanny(d, k, diss=TRUE)$clustering
-        T[k] <- INCAindex(d, p)$Total
-    }
-    return(T)
+  ppp <- sapply(2:K, function(x){cluster::fanny(d, k=x, diss=TRUE)$clustering})
+  T <- c(NA, apply(ppp, 2, function(x){INCAindex(d, x)$Total}))
+  return(T)
 } 
 
 bestela <- function(d, K, method){
-   T <- rep(NA, K)  
-   for (k in 2:K){
-           aux <- agnes(d, diss=TRUE, method=method)
-           p <- cutree(aux, k)
-           T[k] <- INCAindex(d, p)$Total
-   }
-    return(T)
+   aux <- fastcluster::hclust(as.dist(d), method=method)
+   ppp <- sapply(2:K, function(x){stats::cutree(aux, k=x)})
+   T <- c(NA, apply(ppp, 2, function(x){INCAindex(d, x)$Total}))
+   return(T)
 }   
 
 if (method=="partition"){
     pert <- as.matrix(pert)
     M <- dim(pert)[2]
     K <- max(pert)
+    #      0 can not be a partitions name
+    if (any(pert == 0))
+      stop("pert contains 0 named individuals.Partitions must be named by factors or with numbers from 1 to k.")
     T <- rep(NA, K)
 #    tops <- rep(NA, M)
     for (m in 1:M){
@@ -64,9 +55,6 @@ if (method=="partition"){
 #      populations must be named with numbers from 1 to k
        if (length(tabulate(as.factor(pert[,m]))) != tops)
           stop("Partitions must be named by factors or with numbers from 1 to k.")
-#      0 can not be a partitions name
-       if (any(pert[,m]==0))
-          stop("pert contains 0 named individuals.Partitions must be named by factors or with numbers from 1 to k.")
        T[tops] <- INCAindex(d, pert[,m])$Total
     }  
 } else{

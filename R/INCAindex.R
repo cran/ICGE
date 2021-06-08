@@ -1,4 +1,4 @@
-INCAindex <- function(d,pert_clus){
+INCAindex <- function(d, pert_clus){
 ############### Number of atypical individuals  #############################
 # Input:
 # d: distance matrix (n x n)

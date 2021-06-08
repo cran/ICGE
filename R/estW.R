@@ -39,23 +39,16 @@ N<- matrix(0,k-1,1)
 
 for (i in 1:(k-1)){
     for (j in i:(k-1)){
-
-        M[i,j]=delta[i,k]+delta[j,k]-delta[i,j]
-
+        M[i,j] <- delta[i,k]+delta[j,k]-delta[i,j]
+        M[j,i] <- M[i,j]
     }
+  N[i] <- delta[i,k]+phi[k]-phi[i]
 }
 
-for (i in 1:(k-1)){
-    for (j in i:(k-1)){
-        M[j,i]=M[i,j]
-    }
-}
 
-for (i in 1:(k-1)){
-    N[i]=delta[i,k]+phi[k]-phi[i]
-}
-#library(MASS) (Dagoenekoz ezarrita dago DESCRIPTION-en Depends atalean)
-alpha<-ginv(M)%*%N
+
+
+alpha <- MASS::ginv(M)%*%N
 aux <- sum(alpha)
 alpha <- c(alpha, 1-aux)
 
@@ -74,9 +67,8 @@ if (W<0){
     cat("Warning: possibly a negative value of INCA statistic.")
 }
 
-for (i in 1:k){
-U[i]=phi[i]-W
-}
+U <- phi - W
+
 out=list(Wvalue=W,  Uvalue=U)
 
 class(out) <- "incaest"

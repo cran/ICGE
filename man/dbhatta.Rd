@@ -16,7 +16,7 @@ dbhatta(x)
 }
 \references{ Bhattacharyya, A. (1946). On a measure of divergence of two multinomial populations.
   \emph{Sankhya: The Indian Journal of Statistics, Series A}. \bold{14}, 177-136.}
-\author{  Itziar Irigoien \email{itziar.irigoien@ehu.es}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV-EHU), Donostia, Spain.
+\author{  Itziar Irigoien \email{itziar.irigoien@ehu.eus}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV-EHU), Donostia, Spain.
 
 Conchita Arenas \email{carenas@ub.edu}; Departament d'Estadistica, Universitat de Barcelona, Barcelona, Spain.
 }

@@ -1,4 +1,4 @@
-gowerNOmissing <- function(x, vc, vb, vn){
+gowerNOmissing_v2 <- function(x, vc, vb, vn){
 ############### Calculates gower distance for mixed variables #######
 ##                  no missing values
 # Input:
@@ -6,6 +6,7 @@ gowerNOmissing <- function(x, vc, vb, vn){
 # vc: column position for cuantitative variables
 # vb: column position for binary variables
 # vn: column position for nominal variables
+# R: vector with ranges for the vc cuantitative variablesNO
 # Output:
 # d: distance matrix
 ####################################################################

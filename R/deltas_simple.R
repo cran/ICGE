@@ -19,16 +19,10 @@ frec <- tabulate(pert) # vector of frecuencies of individuals in each population
 
 for (pob1 in 1:(k-1)){
   for (pob2 in (pob1+1):k){
-    delta[pob1, pob2] <- sum(d[pert==pob1, pert==pob2])
+    aux <- sum(d[pert==pob1, pert==pob2])
+    delta[pob1, pob2] <- aux/(frec[pob1]*frec[pob2])-var[pob1]-var[pob2]
+    delta[pob2, pob1] <- delta[pob1, pob2]    
   }
-}
-
-
-for (pob1 in 1:(k-1)){
-    for (pob2 in (pob1+1):k){
-        delta[pob1, pob2] <- delta[pob1, pob2]/(frec[pob1]*frec[pob2])-var[pob1]-var[pob2]
-        delta[pob2, pob1] <- delta[pob1, pob2]
-    }
 }
 
 

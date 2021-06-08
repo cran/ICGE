@@ -23,7 +23,7 @@ to include missing values (as \code{NA}) and therefore calculates distances base
   A \code{\link{dist}} object with distance information.
 }
 \references{ Gower, J.C. (1971). A general coefficient of similarity and some of its properties. \emph{Biometrics}, \bold{27}, 857--871.}
-\author{  Itziar Irigoien \email{itziar.irigoien@ehu.es}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV-EHU), Donostia, Spain.
+\author{  Itziar Irigoien \email{itziar.irigoien@ehu.eus}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV/EHU), Donostia, Spain.
 
 Conchita Arenas \email{carenas@ub.edu}; Departament d'Estadistica, Universitat de Barcelona, Barcelona, Spain.
 }
