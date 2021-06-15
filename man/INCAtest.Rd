@@ -20,7 +20,7 @@ INCAtest(d, pert, d_test, np = 1000, alpha = 0.05, P = 1)
 \value{A list with class "incat" containing the following components:
   \item{StatisticW0 }{value of the INCA statistic.}
   \item{ProjectionsU }{values of statistics measuring the projection from the specific object to each considered group.}
-  \item{pvalues}{p-values obtained in the \code{P} times repeated bootstrap procedure.}
+  \item{pvalues}{p-values obtained in the \code{P} times repeated bootstrap procedure. Note: If \code{P}>1, it is printed the number of times the p-values were smaller than \code{alpha}.}
   \item{alpha }{specified value of the level of the test.}
 }
 \references{ Irigoien, I. and  Arenas, C. (2008). INCA: New statistic for estimating the number of clusters and identifying atypical units.

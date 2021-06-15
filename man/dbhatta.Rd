@@ -8,7 +8,7 @@
 dbhatta(x)
 }
 \arguments{
-  \item{x}{ a matrix containing, in its rows, the frequencies for each unit.}
+  \item{x}{ a matrix containing, in its rows, the frequencies for each unit. Note: check that each row adds up to 1}
 }
 
 \value{
@@ -23,15 +23,13 @@ Conchita Arenas \email{carenas@ub.edu}; Departament d'Estadistica, Universitat d
 \seealso{  \code{\link{dist}}, \code{\link{dmahal}},
   \code{\link{dgower}}, \code{\link{dcor}}, \code{\link{dproc2}} }
 \examples{
-#Generate 10 objects in dimension 4. Number of trials M=30. 
-#Frequencies obtained using tabulate function.
-n <- 10
-f <- matrix(0, n, 4)
-M <- 30
-for (i in 1:n){
-    f[i,] <- tabulate(sample(1:4, M, replace=TRUE))/M
-}
-
+#5 individuals represented by their relative frequencies of 4 characteristics (M1-M4):
+f <- matrix(c(0.36, 0.21, 0.23, 0.20,
+              0.66, 0.18, 0.11, 0.05,
+              0.01, 0.24, 0.62, 0.13,
+              0.43, 0.38, 0.08, 0.11,
+              0.16, 0.07, 0.09, 0.68), 
+              byrow=TRUE, nrow=5, dimnames=list(1:5, paste("M", 1:4, sep="")))
 
 # Bhattacharyya distances between pairs 
 d <- dbhatta(f)
