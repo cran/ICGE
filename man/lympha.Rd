@@ -65,7 +65,7 @@ There are not missing values.
    19. no. of nodes in: 0-9, 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, >=70
 }
 \source{
-The UCI KDD Archive, \url{http:/kdd.ics.uci.edu }
+The UCI KDD Archive.
 }
 \references{
 Hettich S and Bay SD (1999). The UCI KDD Archive. Department of

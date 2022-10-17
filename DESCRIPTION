@@ -1,6 +1,6 @@
 Package: ICGE
-Version: 0.4.1
-Date: 2021-06-14
+Version: 0.4.2
+Date: 2022-10-14
 Title: Estimation of Number of Clusters and Identification of Atypical
         Units
 Authors@R: c(person("Itziar", "Irigoien", role = c("aut", "cre"),
@@ -12,9 +12,9 @@ Depends: R (>= 2.0.1), utils, stats, MASS, cluster, fastcluster
 Description: It is a package that helps to estimate the number of real clusters in data as well as to identify atypical units. The underlying methods are based on distances rather than on unit x variables.
 License: GPL (>= 2)
 LazyData: yes
-Packaged: 2021-06-14 16:47:32 UTC; itziar
+Packaged: 2022-10-17 08:36:47 UTC; itziar
 Author: Itziar Irigoien [aut, cre],
   Concepcion Arenas [aut]
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2021-06-15 08:10:12 UTC
+Date/Publication: 2022-10-17 09:25:23 UTC

@@ -2,9 +2,9 @@ estW_simple<-function(phi, var, delta, Uout=TRUE){
 ######################## Estimation of INCA W (faster version) ###############
 # Input:
     # phi: proximity vector
-    # var: vector of geometric variabilities
+    # var: vector of geometric varibilities
     # delta: matrix of distances between clusters
-    # Uout: logical to indicate whether U values shold be returned
+    # Uout: logical to indicate whether U values should be returned
 # Output:
    # Wvalue: estimation of W
    # Uvalue: projections U1, ..., Uk

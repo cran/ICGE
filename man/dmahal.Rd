@@ -15,8 +15,7 @@ dmahal(datos, S)
 \value{
    A \code{\link{dist}} object with distance information.
 }
-\references{ Pe\~nA D. (2002) \emph{Analisis de Datos Multivariantes}. Mc Graw Hill. 
-
+\references{ 
 Everitt B. S. and Dunn G. (2001) \emph{ Applied Multivariate Data Analysis}. 2 edition, Edward Arnold, London.
 }
 \author{  Itziar Irigoien \email{itziar.irigoien@ehu.eus}; Konputazio Zientziak eta Adimen Artifiziala, Euskal Herriko Unibertsitatea (UPV/EHU), Donostia, Spain.

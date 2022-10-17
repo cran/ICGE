@@ -3,7 +3,7 @@ dgower <- function(x, type=list()){
 # Input:
 # x: data matrix. Missing values are indicated as "NA"
 # type: list with components,
-#      cuant =  position of cuantitative variables
+#      cuant =  position of quantitative variables
 #      bin = position of  binary variables (asymmetric)
 #      nom = position of nominal variables
 # Output:

@@ -57,7 +57,7 @@ This data set has been used extensively for classification tasks.
   Matrix with 366 rows.
 }
 \source{
-  The UCI KDD Archive, \url{http:/kdd.ics.uci.edu }
+  The UCI KDD Archive.
 }
 \references{
   Guvenir H, Demiroz G, Ilter N (1998). Learning differential

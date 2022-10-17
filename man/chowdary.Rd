@@ -15,10 +15,7 @@ and Dukes' B colon tumors (C). The actual data set, by de Souto et. al
   Data frame with 183 rows and  104 columns.
 }
 \source{
- Actual source
- \url{http://algorithmics.molgen.mpg.de/Static/Supplements/CompCancer/Affymetrix/chowdary-2006} 
- 
-Original source \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE3726}
+Original source from `National Center for Biotechnology Information' from the United States of America, query GSE3726.
 }
 \references{
  de Souto MCP,  Costa IG, de  Araujo DSA, Ludermir TB, and  Schliep A

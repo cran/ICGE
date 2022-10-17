@@ -3,7 +3,7 @@ gowerWITHmissing_v2 <- function(x, vc, vb, vn){
 ##                  WITH missing values
 # Input:
 # x: data matrix
-# vc: column position for cuantitative variables
+# vc: column position for quantitative variables
 # vb: column position for binary variables
 # vn: column position for nominal variables
 # 
