@@ -1,4 +1,4 @@
-98c4efde5d04e413ec5b90bfe0baaf74 *DESCRIPTION
+d32dc26f07afe4bdc036112c09f4cb82 *DESCRIPTION
 fb944be581365c9a46b105b0a8a3b55f *NAMESPACE
 a790d1f4f67d268c44e7b06a70e22b14 *R/INCAindex.R
 4974ae79a401f2fe512c0750f540f70e *R/INCAncinner.R
@@ -37,7 +37,7 @@ e3e7ff489a4a38c007ec525dc07fb563 *data/chowdary.RData
 d04ca79f5a56c6229fdc75a07e101289 *data/dermatology.RData
 ff0e3a2c7fd9488bc5657eb4bb8efdbe *data/lympha.RData
 3dea7da0feb111016e4665aa3912e248 *man/INCAindex.Rd
-e894b9b42429116f0c689ce6f80413cd *man/INCAnumclu.Rd
+38769a04db63ebda7ec9985cc4fe41f1 *man/INCAnumclu.Rd
 6066b51e7ff17bc5aa16b167069bed21 *man/INCAtest.Rd
 a27b198d2284674c265b9a5deed86353 *man/SyntheticTimeCourse.Rd
 948406fe396c01525b304dbd613ecc66 *man/chowdary.Rd

@@ -17,8 +17,8 @@ INCAnumclu(d, K, method = "pam", pert, L= NULL, noise=NULL)
   \item{d}{ a distance matrix or a \code{\link{dist}} object with distance information between units.}
   \item{K}{ the maximum number of cluster to be considered. For each k value ( k=2,..,K)  a partition with k clusters is calculated. }
   \item{method}{ character string defining the clustering method in
-    order to obtain the partitions. The hierarchical aglomerative clustering methods are perfomed via \code{\link{hclust}} function in package \pkg{fastcluster}. Other clustering methods are performed  via the functions in package \pkg{cluster}, such as: \code{\link{pam}}, 
-    \code{\link{diana}} and  \code{\link{fanny}}. The available clustering methods are \code{pam} (default method), \code{average} (UPGMA), \code{single} (single linkage),
+    order to obtain the partitions. The hierarchical aglomerative clustering methods are perfomed via \code{\link[fastcluster]{hclust}} function in package \pkg{fastcluster}. Other clustering methods are performed  via the functions in package \pkg{cluster}, such as: \code{\link[cluster]{pam}}, 
+    \code{\link[cluster]{diana}} and  \code{\link[cluster]{fanny}}. The available clustering methods are \code{pam} (default method), \code{average} (UPGMA), \code{single} (single linkage),
 \code{complete} (complete linkage), \code{ward.D2} (Ward's method), \code{ward.D}, \code{centroid}, \code{median}, \code{diana} (hierarchical
 divisive) and \code{fanny} (fuzzy clustering). Nevertheless, the user can introduce
 particular or custom  partitions indicating \code{method="partition"} and specifying
